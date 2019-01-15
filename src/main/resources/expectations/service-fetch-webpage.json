@@ -1,0 +1,97 @@
+{
+	"expectations": [	
+		{
+			"request":
+				{		
+					"path": "/service-fetch-webpage/fetch/page",
+					"method": "POST",
+					"headers": [
+						{"name":"Content-Type", "value":"application/json; charset=utf-8"}
+					],
+				"body": {
+				
+				 	"url": "https://w3.ibm.com/",
+  					"timeOut": 10,
+  					"modifiedSince": 10 
+			}
+			},
+			"response":
+				{
+					"status": 200,
+					"headers": [
+						{"name":"Content-Language", "value":"en-US"},
+						{"name":"Content-Type", "value":"application/json"}						
+				],
+				"body": {
+				
+				"url": "https://w3.ibm.com",
+			  	"status": 200,
+			  	"headers": {
+				    "date": "Wed, 05 Dec 2018 16:31:48 GMT",
+				    "x-global-transaction-id": "475431897",
+				    "x-backside-transport": "OK OK",
+				    "vary": "Accept",
+				    "x-served-by": "cache-iad2133-IAD",
+				    "x-cache-hits": "0",
+				    "via": "1.1 varnish",
+				    "x-powered-by": "Express",
+				    "x-timer": "S1544027509.753835,VS0,VE46",
+				    "content-type": "text/html; charset=utf-8",
+				    "location": "https://w3.ibm.com",
+				    "x-cache": "MISS",
+				    "accept-ranges": "bytes",
+				    "status": "200"
+  					},
+  					"content": "<html><body>mocking</body></html>",
+  					"text": "w3"
+				
+				
+				}
+				}			
+		},
+		{
+			"request":
+				{		
+					"path": "/service-fetch-webpage/fetch/page",
+					"method": "GET",
+					"parameters": [
+						{"name": "url","value": "https://whitewater.ibm.com"},
+						{"name": "timeout","value": "10"}
+				]
+			},
+			"response":
+				{
+				"status": 200,
+				"headers": [
+						{"name":"Content-Language", "value":"en-US"},
+						{"name":"Content-Type", "value":"application/json"}						
+				],
+			
+			"body": {
+				"url": "https://w3.ibm.com",
+			  	"status": 200,
+			  	"headers": {
+				    "date": "Wed, 05 Dec 2018 16:31:48 GMT",
+				    "x-global-transaction-id": "475431897",
+				    "x-backside-transport": "OK OK",
+				    "vary": "Accept",
+				    "x-served-by": "cache-iad2133-IAD",
+				    "x-cache-hits": "0",
+				    "via": "1.1 varnish",
+				    "x-powered-by": "Express",
+				    "x-timer": "S1544027509.753835,VS0,VE46",
+				    "content-type": "text/html; charset=utf-8",
+				    "location": "https://w3.ibm.com",
+				    "x-cache": "MISS",
+				    "accept-ranges": "bytes",
+				    "status": "200"
+  					},
+  					"content": "<html><body>mocking</body></html>",
+  					"text": "w3"
+				
+				
+				}
+				}
+		}
+	]	
+}

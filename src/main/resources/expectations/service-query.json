@@ -1,0 +1,107 @@
+{
+	"expectations": [	
+		{
+			"request":
+				{		
+					"path": "/search/searchservice/col/w3/appid/w3search/responseFormat/json",
+					"method": "GET",
+					"headers": [
+						{"name": "Content-Type", "value": "application/json"}						
+				],								
+				"parameters": [
+						{"name": "query", "value": "watson"}						
+					]
+				},
+			"response":
+				{
+					"status": 200,
+					"headers": [
+						{"name": "Content-Type", "value": "application/json"}						
+					],
+				"body": {
+				
+					
+				    "resultset": {
+        			"link": "http://localhost/search/searchservice/col/w3/appid/w3search/responseFormat/json?query=watson",
+        			"version": "0.1",
+        			"searchquery": {
+			            "userquery": "watson",
+			            "collection": "w3",
+			            "sources": "w3_source_01_04",
+			            "filter": "NOT (scope:appsatibm OR scope:medialibrary)"
+        		},
+	        "suggestions": [ ],
+	        "searchresults": {
+	            "totalresults": 162162,
+	            "startindex": 0,
+	            "numresults": 10,
+	            "searchresultlist": [
+                {
+                    "resultnum": 0,
+                    "id": "w3_push/https%3a%2f%2fw3.ibm.com%2fhelp%2f%23%2ffr_ca%2farticle%2fw3search",
+                    "collection": "w3_collection_FR",
+                    "title": "Utiliser w3 Search with Watson",
+                    "url": "https://w3.ibm.com/help/#/fr_ca/article/w3search",
+                    "summary": "",
+                    "description": "Trouver du contenu sur l'Internet IBM et affiner votre recherche.",
+                    "language": "fr",
+                    "updated": "2018-08-02T15:11:33.578Z",
+                    "geography": {
+                        "region": "",
+                        "country": "",
+                        "site": ""
+                    },
+                    "score": "23.9766",
+                    "vse-base-score": "23.9766",
+                    "docattributes": [
+                        {
+                            "name": "category",
+                            "value": "sites_helpatibm"
+                        },
+                        {
+                            "name": "category",
+                            "value": "sites_ithelp"
+                        },
+                        {
+                            "name": "scope",
+                            "value": "helpatibm"
+                        },
+                        {
+                            "name": "title",
+                            "value": "Utiliser w3 Search with Watson"
+                        },
+                        {
+                            "name": "w3description",
+                            "value": "Trouver du contenu sur l'Internet IBM et affiner votre recherche."
+                        },
+                        {
+                            "name": "countries",
+                            "value": "ZZ"
+                        }
+                    ],
+                    "links": [ ],
+                    "mimetype": "",
+                    "highlightedtext": {
+                        "title": "Utiliser w3 Search with <strong>Watson</strong>",
+                        "url": "https://w3.ibm.com/help/#/fr_ca/article/w3search",
+                        "summary": "",
+                        "description": "Trouver du contenu sur l'Internet IBM et affiner votre recherche."
+                    },
+                    "resultGroups": [ ],
+                    "explainInfo": [ ],
+                    "socialTags": [ ],
+                    "clickData": "",
+                    "nestedSearchResults": {
+                        "searchresultlist": [ ]
+                    }
+                }
+            ]
+        }
+    }
+				
+				
+				}
+			}			
+		}
+	]	
+}

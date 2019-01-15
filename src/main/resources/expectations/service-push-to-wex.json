@@ -1,0 +1,32 @@
+{
+	"expectations": [	
+		{
+			"request":
+				{		
+					"path": "/search/esas/pushtowex",
+					"method": "POST",
+					"headers": [
+						{"name": "Content-Type", "value": "text/plain"}
+					],
+				"body": {
+				
+				
+				"OPERATION":"PUSH","collection-name":"w3","document-uri":"https://test.ibm.com/test","document-details":{"meta_dc.subject":"BF.HR","meta_dc.date":"2013-10-04","meta_originalcharencoding":"utf-8","meta_charencodingforconversion":"utf-8","meta_keywords":"%25+this+is+some+%26+keyword+with+%24%23+special+%28%29+characters","meta_dc.publisher":"IBM Corporation","digest":"16ddbf6ec19646e8d6ead0b63b3678e0","tstamp":"1970-01-01T00:00:00.000Z","anchor":"\u00dcbersicht der HR Prozesse","meta_dc.language":"de-DE","id":"test-id","scopes":"nutch","title":"You and IBM: \u00dcbersicht der HR Prozesse \u2010 Deutschland","meta_ibm.country":"DE","Charset":"UTF-8","meta_content-type":"text\/html; charset=UTF-8","meta_ibm.effective":"2013-10-04","Content":"QVQmVCBwYWdlIGZvciB0ZXN0aW5n","meta_dc.rights":"\u00a9 Copyright IBM Corp. 2011","meta_viewport":"width=device-width, initial-scale=1","host":"test.ibm.com","meta_security":"internal use only","meta_robots":"index , follow","url":"https://test.ibm.com/test","meta_dc.type":"CT739","meta_description":"You % and & IBM - Germany IBM","meta_owner":"intranet@uk.ibm.com","meta_feedback":"intranet@uk.ibm.com","boost":"0.0","Language":"en","meta_ecmsynkey":"U405564N22422N88","meta_source":"w3DS; 25 Apr 2017","ContentType":"text\/plain"}
+				
+				
+				}
+			},
+			"response":
+				{
+					"status": 200,
+					"headers": [
+						{"name": "Content-Type", "value": "application/json"}
+					],
+				"body": {
+					"status":"Success","operation":"push","url":"https://test.ibm.com/test","source":"web"
+				
+				}
+			}			
+		}
+	]	
+}

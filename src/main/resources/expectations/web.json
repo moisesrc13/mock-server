@@ -1,0 +1,20 @@
+{
+	"expectations": [	
+		{
+			"request":
+				{		
+					"path": "/web/test.html",
+					"method": "GET"					
+			},
+			"response":
+				{
+					"status": 200,
+					"headers": [
+						{"name": "Accept-Ranges", "value": "bytes"},
+						{"name": "Content-Type", "value": "text/html"}
+					],
+				"body": "<html><body>mockserver test</body></html>"
+				}			
+		}
+	]	
+}

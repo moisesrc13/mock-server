@@ -1,0 +1,11 @@
+#JFrog CLI example
+version: 1
+type: maven
+resolver:
+  snapshotRepo: txo-onesearch-w3-maven-virtual
+  releaseRepo: txo-onesearch-w3-maven-virtual
+  serverID: rt-w3search
+deployer:
+  snapshotRepo: txo-onesearch-w3-maven-local
+  releaseRepo: txo-onesearch-w3-maven-local
+  serverID: rt-w3search

@@ -1,0 +1,60 @@
+{
+	"expectations": [	
+		{
+			"request":
+				{		
+					"path": "",
+					"method": "",
+					"headers": [
+						{"name": "name", "value": "value"},
+						{"name": "name", "value": "value"}
+					],
+				"body": "body text",
+				"cookies": [
+						{"name": "name", "value": "value"},
+						{"name": "name", "value": "value"}
+					],
+				"parameters": [
+						{"name": "name", "value": "value"},
+						{"name": "name", "value": "value"}
+					]
+				},
+			"response":
+				{
+					"status": 200,
+					"headers": [
+						{"name": "name", "value": "value"},
+						{"name": "name", "value": "value"}
+					],
+				"body": "body text"
+				}			
+		},
+		{
+			"request":
+				{		
+					"path": "",
+					"method": "",
+					"headers": [
+						{"name": "name", "value": "value"},
+						{"name": "name", "value": "value"}
+					],
+				"body": {
+						"type": "json object",
+						"value": "sample"
+				}
+				},
+			"response":
+				{
+					"status": 200,
+					"headers": [
+						{"name": "name", "value": "value"},
+						{"name": "name", "value": "value"}
+					],
+				"body": {
+						"type": "json object",
+						"value": "sample"
+				}
+				}
+		}
+	]	
+}

@@ -1,0 +1,32 @@
+{
+	"expectations": [	
+		{
+			"request":
+				{		
+					"path": "/search/pushservice/delete",
+					"method": "POST",
+					"headers": [
+						{"name": "Content-Type", "value": "text/plain"}					
+					],
+				"body": {
+				
+				"CollectionName":"w3","OptionalMetadata":{"owner":"w3search@us.ibm.com","IBM.Priority":"yes","source":"web","scopes":"w3","TestMetaData":"true"},"DocumentUri":"https://test.ibm.com/test.html","DocumentDetails":{"ContentType":"text/xml","Language":"en","keywords":"this is one % keyword only with %","Content":"Somo content","Charset":"UTF-8","scopes":"w3","title":"Hundred Percent Club 2017"}
+								
+				}				
+			},
+			"response":
+				{
+					"status": 200,
+					"headers": [
+						{"name": "Content-Type", "value": "application/json"}						
+					],
+				"body": {
+			
+				"operation": "DELETE",	"collection": "w3",	"uri": "https://test.ibm.com/test.html",	"retCode": "0",	"msg": "OPERATION_SUCCESSFUL",	"description": "The requested operation was successful."	
+				
+				}
+			}			
+		}
+		
+	]	
+}

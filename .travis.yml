@@ -1,0 +1,64 @@
+dist: trusty
+
+language: java
+
+group: bluezone
+
+sudo: true
+
+addons:
+  ssh_known_hosts:
+    - devpcbmpwwexbe1.w3-969.ibm.com
+
+cache:
+  directories:
+    - dependencies
+    - $HOME/.m2
+    - $HOME/.ivy
+
+before_install:
+# install IBM JDK8 & JFrog CLI
+  - mkdir -p dependencies && wget -q -nc http://rtpgsa.ibm.com//projects/p/psc_install/saas/ssmprov/ibm-java-x86_64-sdk-8.0-5.16.bin -P dependencies
+  - echo "LICENSE_ACCEPTED=TRUE" > dependencies/installer.properties
+  - chmod +x dependencies/ibm-java-x86_64-sdk-8.0-5.16.bin
+  - export PS1=">" 
+  - sudo dependencies/ibm-java-x86_64-sdk-8.0-5.16.bin -i silent
+  - curl -fL https://getcli.jfrog.io | sh
+  - cp jfrog ~
+  - sudo ln -s ~/jfrog /usr/bin/jfrog
+
+env:
+  global:
+    # Set paths for IBM JDK
+    - JAVA_HOME=/opt/ibm/java-x86_64-80
+    - PATH=${JAVA_HOME}/bin:${PATH}
+    - ARTIFACTORY_URL=https://na.artifactory.swg-devops.com:443/artifactory
+    - M2_HOME=/usr/local/maven
+    - REAL_BRANCH=$(git ls-remote origin | sed -n "\|$TRAVIS_COMMIT\s\+refs/heads/|{s///p}")
+
+install: true
+
+before_script:
+    - chmod +x ./scripts/*.sh
+script:
+    - jfrog rt c rt-w3search --url=$ARTIFACTORY_URL --user=$T_ARTIFACTORY_USER --password=$T_ARTIFACTORY_PASSWORD
+    - jfrog rt mvn "clean install -Dartifactory.publish.artifacts=false -f ./pom.xml" ./configuration.yml --build-name=mockserver --build-number=1.0
+
+deploy:
+  - provider: script
+    script: ./scripts/deploy-bluecloud.sh dev
+    skip_cleanup: true
+    on:
+      tags: true
+      branch: master
+
+after_deploy:
+    - echo $TRAVIS_BRANCH
+    - echo $TRAVIS_EVENT_TYPE
+    - echo $TRAVIS_COMMIT_MESSAGE
+    - echo $TRAVIS_TAG
+    - "if [ $REAL_BRANCH == master ] && \n [[ $TRAVIS_TAG =~ ^v[0-9]+.[0-9]+.[0-9]+ ]] && \n [ $TRAVIS_EVENT_TYPE == push ] ;then jfrog rt mvn \"install -f ./pom.xml\" ./configuration.yml --build-name=mockserver --build-number=1.0 \n fi"
+
+
+notifications:
+ slack: ibm-workplace:**REMOVED**
